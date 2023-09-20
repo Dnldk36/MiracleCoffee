@@ -550,17 +550,6 @@ public class Controller {
         model.addAttribute("streetF", street);
 
 
-            /*Iterable<CoffeShop> coffeShopList = coffeeShopRepository.findAll();
-            model.addAttribute("coffeeShopList", coffeShopList);
-            Iterable<Worker> workerList = workerRepository.findAll();
-            model.addAttribute("workerList", workerList);
-
-            Optional<Worker> optionalWorker = workerRepository.findById(id);
-            List<Worker> res = new ArrayList<>();
-            optionalWorker.ifPresent(res::add);
-            model.addAttribute("thisWorkerVac", res);*/
-
-
         //SOMETHING
         model.addAttribute("imageId", 1);
         model.addAttribute("title", "Works");

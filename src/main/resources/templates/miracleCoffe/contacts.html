@@ -3,6 +3,7 @@
 <header th:insert="blocks/header :: header"></header>
 <body th:insert="blocks/navigation :: navigation"></body>
 
+    
       <div th:each="contact : ${contacts}" class="contacts">
         <div class="contact">
           <h2 th:text="${contact.getJobTitle()}"/>

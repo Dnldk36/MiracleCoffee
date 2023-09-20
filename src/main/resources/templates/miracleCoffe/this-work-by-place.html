@@ -4,10 +4,10 @@
 <body th:insert="blocks/navigation :: navigation"></body>
 
 
-<div class="works-by-place">
-    <div>
+<div th:each="el : ${workerList}" class="works-by-place">
+    <div th:if="${el.getCoffeShop().getStreet() == streetF}">
         <div class="work-list">
-            <div th:each="el : ${workerList}" th:if="${el.getCoffeShop().getStreet() == streetF}" class="worker">
+            <div class="worker">
                 <div class="toper">
                     <h2 th:text="${el.getTitle()}"/>
                     <div class="eyes">
@@ -26,10 +26,10 @@
                 </div>
             </div>
 
-            <!--<div th:if="${workers.totalPages > 0}" class="div-page">
+            <div th:if="${workers.totalPages > 0}" class="div-page">
 
                 <div th:each="pageNumber : ${numbers}">
-                    <a th:href="@{'/miracleCoffee/work?page=' + ${pageNumber} + '&size=' + ${workers.getSize()}}"
+                    <a th:href="@{'/miracleCoffee/work/${}?page='' + ${pageNumber} + '&size=' + ${workers.getSize()}}"
                        th:text="${pageNumber + 1}"
                        th:if="${pageNumber == workers.getNumber()}"
                        id="select-page"></a>
@@ -40,7 +40,7 @@
                        class="pages-text"></a>
 
                 </div>
-            </div>-->
+            </div>
 
         </div>
     </div>
