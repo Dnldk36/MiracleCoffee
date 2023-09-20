@@ -16,11 +16,12 @@ public class CoffeShop {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String street;
+    @Lob
     private String description;
     private LocalDateTime dateTime = LocalDateTime.now();
-    private int workTime;
+    private String workTime;
 
-    public CoffeShop(String street, String description, int workTime) {
+    public CoffeShop(String street, String description, String workTime) {
         this.street = street;
         this.description = description;
         this.workTime = workTime;

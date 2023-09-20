@@ -5,21 +5,28 @@
 
 <h1>Menu</h1>
 <div class="content">
-    <div th:each="category : ${categoryList}">
-        <div class="categori">
-            <h2 th:text="${category.getTitle()}"/>
-        </div>
-        <div class="coffee-list">
-            <div th:each="product : ${productList}">
+    <div>
+        <div th:each="category : ${categoryList}">
 
-                <div th:if="${product.getCategories() eq category}" class="coffee">
-                    <img th:src="@{${'/miracleCoffee/displayProduct?id=' + product.getId()}}">
-                    <h2 th:text="${product.getTitle()}"/>
-                    <h3 th:text="${product.getPrice()}"/>
-                    <p th:text="${product.getDescription()}">
-                </div>
-
+            <div th:class="categori">
+                <h2 th:text="${category.getTitle()}"/>
             </div>
+
+            <div class="coffee-list">
+                <div th:each="product : ${productList}">
+
+
+                    <div th:if="${product.getCategories() eq category}" class="coffee">
+                        <img th:src="@{${'/miracleCoffee/displayProduct?id=' + product.getId()}}">
+                        <h2 th:text="${product.getTitle()}"/>
+                        <h3 th:text="${product.getPrice()}"/>
+                        <p th:text="${product.getDescription()}">
+                    </div>
+
+
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

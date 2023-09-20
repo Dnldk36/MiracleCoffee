@@ -3,19 +3,20 @@
 <header th:insert="blocks/header :: header"></header>
 <body th:insert="blocks/navigation :: navigation"></body>
 
-    <div th:each="shop : ${optionalCoffeeShop}" class="about-shop">
-          <h2>Shop</h2>
-          <div class="shop">
-              <img  th:src="@{${'/miracleCoffee/displayCoffeeShop?id=' + shop.getId()}}">
-              <div class="shop-text">
-              <h3 th:text="${shop.getStreet()}"/>
-              <p th:text="${shop.getDescription()}"/>
-              <div class="number">
-                <p></p>
-                <h4 th:text="${shop.getWorkTime()}"/>
-              </div>
+<div class="about-shop">
+    <div th:each="shop : ${optionalCoffeeShop}">
+        <h2>Shop</h2>
+        <div class="shop">
+            <img th:src="@{${'/miracleCoffee/displayCoffeeShop?id=' + shop.getId()}}">
+            <div class="shop-text">
+                <h3 th:text="${shop.getStreet()}"/>
+                <p th:text="${shop.getDescription()}"/>
+                <div class="number">
+                    <p></p>
+                    <h4 th:text="${shop.getWorkTime()}"/>
+                </div>
             </div>
-          </div>
         </div>
-
+    </div>
+</div>
 <footer th:insert="blocks/footer :: footer"></footer>

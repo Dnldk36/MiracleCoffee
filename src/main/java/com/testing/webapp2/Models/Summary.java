@@ -17,6 +17,7 @@ public class Summary {
     private long id;
     private String name;
     private int age;
+    @Lob
     private String description;
     private Gender gender;
     public Summary(String name, int age, String description, Gender gender) {

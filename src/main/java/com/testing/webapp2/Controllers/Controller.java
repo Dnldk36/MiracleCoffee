@@ -253,7 +253,7 @@ public class Controller {
     @PostMapping("/shops")
     public String shopsAdd(@RequestParam String street,
                           @RequestParam String descriptionShop,
-                          @RequestParam int workTime,
+                          @RequestParam String workTime,
                           @RequestParam MultipartFile file1) throws SQLException, IOException {
 
         CoffeShop coffeShop = new CoffeShop(street,descriptionShop,workTime);
@@ -430,7 +430,7 @@ public class Controller {
 
                                @RequestParam String street,
                                @RequestParam String descriptionShop,
-                               @RequestParam int workTime,
+                               @RequestParam String workTime,
                                @RequestParam MultipartFile file1,
 
                                @RequestParam String categoryTitle,

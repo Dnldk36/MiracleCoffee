@@ -3,32 +3,30 @@
 <header th:insert="blocks/header :: header"></header>
 <body th:insert="blocks/navigation :: navigation"></body>
 
-<div class="vacancy">
-    <div th:each="el : ${workerVac}">
-        <h1 th:text="${el.getTitle()}"/>
-        <img th:src="@{${'/miracleCoffee/display?id=' + el.getId()}}"/>
-        <h2 th:text="${el.getDescription()}"/>
-        <div class="vacancy-text">
-            <h3 th:text="Salary + ': ' + ${el.getSalary()}"/>
-            <h3 th:if="${el.getCoffeShop() != null}" th:text="${el.coffeShop.street}"/>
-        </div>
 
-        <div class="form-class">
-            <form th:object="${Summary}"
-                  th:action="@{/miracleCoffee/vacancy/{id}(id=${el.getId()})}"
-                  method="post">
-                <input type="text" name="name" placeholder="Give me your name">
-                <textarea type="text" name="description" placeholder="Write about you"></textarea>
-                <input type="number" name="age" placeholder="Age">
-                <select class="form-control selectpicker" th:field="*{gender}" id="gender" name="gender">
-                    <option th:each="gender : ${T(com.testing.webapp2.Models.Summary.Gender).values()}"
-                            th:value="${gender}"
-                            th:text="${gender.getTitle()}">Gender
-                    </option>
-                </select>
-                <button type="submit" id="form-button">Send</button>
-            </form>
-        </div>
+<div th:each="el : ${workerVac}" class="vacancy">
+    <h1 th:text="${el.getTitle()}"/>
+    <img th:src="@{${'/miracleCoffee/display?id=' + el.getId()}}"/>
+    <h2 th:text="${el.getDescription()}"/>
+    <div class="vacancy-text">
+        <h3 th:text="Salary + ': ' + ${el.getSalary()}"/>
+        <h3 th:if="${el.getCoffeShop() != null}" th:text="${el.coffeShop.street}"/>
     </div>
+
+    <form th:object="${Summary}"
+          th:action="@{/miracleCoffee/vacancy/{id}(id=${el.getId()})}"
+          method="post" class="form-class" >
+        <input type="text" name="name" placeholder="Give me your name">
+        <textarea type="text" name="description" placeholder="Write about you"></textarea>
+        <input type="number" name="age" placeholder="Age">
+        <select class="form-control selectpicker" th:field="*{gender}" id="gender" name="gender">
+            <option th:each="gender : ${T(com.testing.webapp2.Models.Summary.Gender).values()}"
+                    th:value="${gender}"
+                    th:text="${gender.getTitle()}">Gender
+            </option>
+        </select>
+        <button type="submit" id="form-button">Send</button>
+    </form>
 </div>
+
 <footer th:insert="blocks/footer :: footer"></footer>

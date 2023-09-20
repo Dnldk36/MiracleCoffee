@@ -31,6 +31,7 @@ public class Worker {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    @Lob
     private String description;
     private int salary;
     private int date_of_creation;

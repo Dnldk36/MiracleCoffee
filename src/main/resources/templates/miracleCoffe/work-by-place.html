@@ -6,6 +6,7 @@
 
 <div class="works-by-place">
     <div class="work-list">
+
         <div th:each="el : ${workers}"  class="worker">
             <div class="toper">
                 <h2 th:text="${el.getTitle()}"/>

@@ -3,15 +3,16 @@
 <header th:insert="blocks/header :: header"></header>
 <body th:insert="blocks/navigation :: navigation"></body>
 
-<div th:each="shop : ${coffeeShops}" class="shops">
-
-    <div class="one-shop">
-        <h2>Shop</h2>
-        <div class="shop-about">
-            <img  th:src="@{${'/miracleCoffee/displayCoffeeShop?id=' + shop.getId()}}">
-            <div class="shop-text">
-                <h3 th:text="${shop.getStreet()}"/>
-                <a th:href="@{/miracleCoffee/shop/{id}(id=${shop.getId()})}">open</a>
+<div class="shops">
+    <div th:each="shop : ${coffeeShops}">
+        <div class="one-shop">
+            <h2>Shop</h2>
+            <div class="shop-about">
+                <img th:src="@{${'/miracleCoffee/displayCoffeeShop?id=' + shop.getId()}}">
+                <div class="shop-text">
+                    <h3 th:text="${shop.getStreet()}"/>
+                    <a th:href="@{/miracleCoffee/shop/{id}(id=${shop.getId()})}">open</a>
+                </div>
             </div>
         </div>
     </div>

@@ -15,7 +15,9 @@ public class Contacts {
     private long id;
     private String jobTitle;
     private String name;
+    @Lob
     private String description;
+    @Lob
     private long phoneNumber;
 
     public Contacts(String jobTitle, String name, String description, long phoneNumber) {
