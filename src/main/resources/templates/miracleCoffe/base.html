@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="../../static/style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@300&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div class="nav">
+      <div class="main-nav">
+        <a href="{% url 'home' %}"
+          ><img src="../../static/img/home.PNG" alt="" class="home-img"
+        /></a>
+        <div class="navlist">
+            {% if nav == 'menu' %}
+            <a class="nav-button" id="main-buttom" href="{% url 'menu' %}">Menu</a>
+            {% else %}
+            <a class="nav-button" href="{% url 'menu' %}">Menu</a>
+            {% endif %}
+
+            {% if nav == 'about' %}
+            <a class="nav-button" id="main-buttom" href="{% url 'about' %}">About</a>
+            {% else %}
+            <a class="nav-button" href="{% url 'about' %}">About</a>
+            {% endif %}
+
+            {% if nav == 'contacts' %}
+            <a class="nav-button" id="main-buttom" href="{% url 'contacts' %}">Contacts</a>
+            {% else %}
+            <a class="nav-button" href="{% url 'contacts' %}">Contacts</a>
+            {% endif %}
+
+            {% if nav == 'work' %}
+            <a class="nav-button" id="main-buttom" href="{% url 'work' %}">Work with us</a>
+            {% else %}
+            <a class="nav-button" href="{% url 'work' %}">Work with us</a>
+            {% endif %}
+
+            {% if nav == 'shops' %}
+            <a class="nav-button" id="main-buttom" href="{% url 'shops' %}">Coffee shops</a>
+            {% else %}
+            <a class="nav-button" href="{% url 'shops' %}">Coffee shops</a>
+            {% endif %}
+
+        </div>
+      </div>
+      <a href="#"
+        ><img src="../../static/img/basket.png" alt="" class="basket-img"
+      /></a>
+    </div>
+        <div class="canteiner">
+
+    {% block canteiner%}
+    {% endblock %}
+    {% block footer %}
+ <div class="footer">
+      <div class="right-footer-part">
+        <img src="../../static/img/home.PNG" alt="" />
+        <p>Give love</p>
+      </div>
+      <div class="left-footer-part">
+        <p>
+          ООО «Miracle Coffee» г.Минск, ул.Притыцкого, 156, оф.27 УНП 193174411
+        </p>
+      </div>
+    </div>
+{% endblock %}
+        </div>
+  </body>
+</html>

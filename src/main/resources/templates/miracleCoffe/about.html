@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--<html xmlns:th="http://www.thymeleaf.org" lang="en">-->
+
+<header th:insert="blocks/header :: header"></header>
+<body th:insert="blocks/navigation :: navigation"></body>
+
+<div class="canteiner">
+      <div class="toper">
+        <div class="title">
+          <h1>Miracle</h1>
+          <h1>Coffee</h1>
+        </div>
+          <img th:src="@{/img/cup-coffee.png}"/>
+      </div>
+      <p>
+        <span id="title">Miracle Coffeean</span> - international chain of coffee
+        houses that specializes in selling high-quality coffee, main courses,
+        desserts and pastries at a single fixed price of 2.6 rubles in Belarus.
+      </p>
+      <div class="about">
+        <h2 style="color: #017600">COMPANY VALUES:</h2>
+        <div class="text">
+          <h3>- CARE OF GUESTS</h3>
+          <p>You inspire us to new achievements</p>
+          <h3>- PROFESSIONALISM</h3>
+          <p>We never stand still, our team is constantly evolving</p>
+          <h3>- TEAM</h3>
+          <p>
+            We believe in the power of teamwork based on respect, honesty, trust
+            and mutual support.
+          </p>
+          <h3>- RESPONSIBILITY</h3>
+          <p>
+            We always fulfill our obligations to employees, partners, suppliers
+            and our Guests.
+          </p>
+        </div>
+      </div>
+    </div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+

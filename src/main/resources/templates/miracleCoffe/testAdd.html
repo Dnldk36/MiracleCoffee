@@ -1,0 +1,17 @@
+
+<header th:insert="blocks/header :: header"></header>
+<body th:insert="blocks/navigation :: navigation"></body>
+
+<div class="test">
+  <h4>Тестовое добавление в БД</h4>
+  <form action="/miracleCoffee/work" method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Title">
+    <input type="text" name="Description" placeholder="Description">
+    <input type="number" name="Salary" placeholder="Salary">
+    <input type="number" name="PostDay" placeholder="PostDay">
+    <input type="file" name="file1" placeholder="photo">
+    <button type="submit">Добавить</button>
+  </form>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>

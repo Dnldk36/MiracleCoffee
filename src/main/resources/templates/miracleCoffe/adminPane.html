@@ -1,0 +1,102 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<header th:insert="blocks/header :: header"></header>
+<body th:insert="blocks/navigation :: navigation"></body>
+
+<h1>Управление БД</h1>
+
+<br><br><br>
+
+<!--WORK-BY-PLACE-->
+<div class="test">
+    <h4>WORK-BY-PLACE</h4>
+    <form action="/miracleCoffee/work" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="Description" placeholder="Description">
+        <input type="number" name="Salary" placeholder="Salary">
+        <input type="number" name="PostDay" placeholder="PostDay">
+
+        <select class="form-control selectpicker" name="workShop">
+            <option th:each="shop : ${shopList}"
+                    th:value="${shop.id}"
+                    th:text="${shop.getStreet()}"> Shop
+            </option>
+        </select>
+
+        <input type="file" name="file" placeholder="photo" id="image" aria-describedby="inputGroupFileAddon04"
+               required="required">
+
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+
+<br><br>
+
+<!--COFFEE-SHOP-->
+<div class="test">
+    <h4>CoffeeShop</h4>
+    <form action="/miracleCoffee/shops" method="post" enctype="multipart/form-data">
+        <input type="text" name="street" placeholder="street">
+        <input type="text" name="descriptionShop" placeholder="Description">
+        <input type="number" name="workTime" placeholder="workTime">
+        <input type="file" name="file1" placeholder="photo" id="image" aria-describedby="inputGroupFileAddon04"
+               required="required">
+
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+
+<br><br>
+
+<!--CONTACTS-->
+<div class="test">
+    <h4>Contact</h4>
+    <form action="/miracleCoffee/contacts" method="post" enctype="multipart/form-data">
+        <input type="text" name="jobTitle" placeholder="jobTitle">
+        <input type="text" name="nameContact" placeholder="nameContact">
+        <input type="text" name="description" placeholder="Description">
+        <input type="number" name="phoneNumber" placeholder="phoneNumber">
+        <input type="file" name="file2" placeholder="photo" id="image" aria-describedby="inputGroupFileAddon04"
+               required="required">
+
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+
+<br><br>
+
+<!--MENU-->
+<div class="test">
+    <h4>MENU</h4>
+    <form th:object="${Product}" action="/miracleCoffee/menu" method="post" enctype="multipart/form-data">
+        <input type="text" name="menuTitle" placeholder="Title">
+        <input type="number" step="0.01" name="menuPrice" placeholder="Price">
+        <input type="text" name="menuDescription" placeholder="Description">
+
+        <select class="form-control selectpicker" name="menuCategories">
+            <option th:each="categories : ${categoryList}"
+                    th:value="${categories.id}"
+                    th:text="${categories.getTitle()}"> Category
+            </option>
+        </select>
+
+        <input type="file" name="file3" placeholder="photo" id="image" aria-describedby="inputGroupFileAddon04"
+               required="required">
+
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+
+<br><br>
+
+<!--CATEGORY-->
+<div class="test">
+    <h4>Category</h4>
+    <form action="/miracleCoffee/menu" method="post">
+        <input type="text" name="categoryTitle" placeholder="categoryTitle">
+
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+
+<br><br>

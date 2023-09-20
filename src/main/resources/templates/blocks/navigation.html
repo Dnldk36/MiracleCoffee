@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<div th:fragment="navigation">
+    <body>
+    <div class="nav">
+        <div class="main-nav">
+            <a th:href="@{/miracleCoffee}">
+                <img src="/img/home.PNG" alt="" class="home-img"/>
+            </a>
+            <div class="navlist">
+
+                <a th:if="${nav == 'menu'}" class="nav-button" id="main-buttom"
+                   th:href="@{/miracleCoffee/menu}">Menu</a>
+                <a th:if="${nav != 'menu'}" class="nav-button" th:href="@{/miracleCoffee/menu}">Menu</a>
+
+
+                <a th:if="${nav == 'about'}" class="nav-button" id="main-buttom"
+                   th:href="@{/miracleCoffee/about}">About</a>
+                <a th:if="${nav != 'about'}" class="nav-button" th:href="@{/miracleCoffee/about}">About</a>
+
+                <a th:if="${nav == 'contacts'}" class="nav-button" id="main-buttom"
+                   th:href="@{/miracleCoffee/contacts}">Contacts</a>
+                <a th:if="${nav != 'contacts'}" class="nav-button" th:href="@{/miracleCoffee/contacts}">Contacts</a>
+
+                <a th:if="${nav == 'work'}" class="nav-button" id="main-buttom" th:href="@{/miracleCoffee/work}">Work
+                    with us</a>
+                <a th:if="${nav != 'work'}" class="nav-button" th:href="@{/miracleCoffee/work}">Work with us</a>
+
+                <a th:if="${nav == 'shops'}" class="nav-button" id="main-buttom" th:href="@{/miracleCoffee/shops}">Coffee
+                    shops</a>
+                <a th:if="${nav != 'shops'}" class="nav-button" th:href="@{/miracleCoffee/shops}">Coffee shops</a>
+
+            </div>
+        </div>
+        <a href="#">
+            <img src="/img/basket.png" alt="" class="basket-img"/>
+        </a>
+    </div>
+    </body>
+</div>

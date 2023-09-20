@@ -1,0 +1,21 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${title}"/>
+</head>
+<body>
+
+<p>Hello</p>
+<a href="/goodbye">Click me!</a>
+<a href="/goodbye?name=pidr&surname=pidrilovich">Link with param to goodbye</a>
+<a href="/hello?name=pidr&surname=pidrilovich">Link with param</a>
+<a href="/exit">Exit</a>
+
+<p th:text="${helloMessage}"/>
+
+</body>
+</html>
